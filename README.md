@@ -92,6 +92,16 @@ Abre o navegador em [http://localhost:3000](http://localhost:3000).
 
 ---
 
+## ⚠️ Estado do Deploy (Hospedagem)
+
+Atualmente, este projeto **não está publicado** em plataformas serverless gratuitas (como Vercel ou Railway) devido a uma restrição rigorosa de segurança da Supercell.
+
+As APIs oficiais do **Clash Royale** e **Brawl Stars** exigem o cadastramento de um **IP Fixo (Estático)** para liberar o acesso. Como serviços de hospedagem gratuitos utilizam IPs dinâmicos, as requisições diretas a partir desses servidores são bloqueadas com erro `403 Forbidden`.
+
+Para contornar isso no futuro, o código já foi adaptado para aceitar URLs de Proxy (como o RoyaleAPI Proxy) através das variáveis `CR_API_URL` e `BS_API_URL`. A solução ideal para produção definitiva é hospedar a aplicação em uma **VPS** com IP dedicado.
+
+---
+
 ## 📜 Licença
 
 Este projeto está licenciado sob a Licença **MIT**. Consulta o ficheiro `LICENSE` para mais detalhes.

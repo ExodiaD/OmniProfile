@@ -135,7 +135,8 @@ export async function GET(request: Request) {
         icon: { id: 28000032 },
       };
     } else {
-      const res = await fetch(`https://api.brawlstars.com/v1/players/${urlSafeTag}`, {
+      const baseUrl = process.env.BS_API_URL || 'https://api.brawlstars.com/v1';
+      const res = await fetch(`${baseUrl}/players/${urlSafeTag}`, {
         headers: {
           'Authorization': `Bearer ${apiKey}`,
           'Accept': 'application/json',

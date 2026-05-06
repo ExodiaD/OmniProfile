@@ -165,7 +165,8 @@ export async function GET(request: Request) {
         bestPathOfLegendSeasonResult: { leagueNumber: 1, trophies: 0, rank: null },
       };
     } else {
-      const res = await fetch(`https://api.clashroyale.com/v1/players/${urlSafeTag}`, {
+      const baseUrl = process.env.CR_API_URL || 'https://api.clashroyale.com/v1';
+      const res = await fetch(`${baseUrl}/players/${urlSafeTag}`, {
         headers: {
           'Authorization': `Bearer ${apiKey}`,
           'Accept': 'application/json',
